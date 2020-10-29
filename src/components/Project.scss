@@ -1,0 +1,52 @@
+.project {
+  width: 100%;
+  padding: 5rem;
+  background: linear-gradient(
+    270.68deg,
+    #f7f7f7 -0.69%,
+    #f7f7f7a1 17.65%,
+    #ffffff 42.09%,
+    #f7f7f7 98.21%,
+    #acabab 105.99%
+  );
+
+  .projectHeading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h2 {
+      font-weight: bolder;
+      font-size: 35px;
+      letter-spacing: -0.01em;
+      color: #010f15;
+      margin-right: 2rem;
+      margin-bottom: 0.5rem;
+
+      span {
+        font-weight: 200;
+      }
+    }
+
+    p {
+      width: 400px;
+      font-weight: normal;
+      font-size: 16px;
+      letter-spacing: 0.01rem;
+      color: #000000;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .line {
+    max-width: 60vw;
+    height: 3px;
+    background-color: #dcc384;
+  }
+
+  .gallery {
+    margin: 5rem;
+  }
+}

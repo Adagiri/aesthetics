@@ -1,0 +1,71 @@
+$color: #CC0000;
+
+.mePin{
+
+	path{
+		fill:  #cc0000d3;
+		z-index: 50;
+	}
+
+	.ring_outer {
+		animation: opacityPulse 2.0s cubic-bezier(1, 0.14, 1, 1);;
+		animation-iteration-count: infinite;
+		opacity: .5;
+	}
+	path.ring_outer{
+		//fill: lighten(@color, 40%);
+	}
+
+	.ring_inner {
+		animation: opacityPulse 2.0s cubic-bezier(0.4, 0.74, 0.56, 0.82);
+		animation-iteration-count: infinite;
+		opacity: .8;
+
+	}
+	path.ring_inner{
+		//fill: lighten(@color, 30%);
+	}
+}
+
+
+
+
+@keyframes opacityPulse {
+    0% {opacity: 0.1;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.1;}
+}
+
+@keyframes bounceInDown {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -3000px, 0);
+	}
+
+	60% {
+		opacity: 1;
+		transform: translate3d(0, 5px, 0);
+	}
+
+	75% {
+		transform: translate3d(0, -3px, 0);
+	}
+
+	90% {
+		transform: translate3d(0, 5px, 0);
+	}
+
+	to {
+		transform: none;
+	}
+}
+
+.bounceInDown {
+	animation-name: bounceInDown;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+}

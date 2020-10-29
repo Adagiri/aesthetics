@@ -1,0 +1,214 @@
+#tog {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px auto 10px;
+  z-index: 20000;
+  &:hover {
+    span:after, span:before {
+width: 100%;
+    }
+  }
+}
+
+#tog span:after,
+#tog span:before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+
+  top: -9px;
+  z-index: 3000;
+}
+
+#tog span:after {
+  top: 9px;
+}
+#tog span {
+  position: relative;
+  display: block;
+}
+
+#tog span,
+#tog span:after,
+#tog span:before {
+  width: 100%;
+  height: 3.5px;
+  background-color: #fff;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 1px;
+}
+
+#tog span:before {
+  width: 75%;
+
+  &:hover {
+    background-color: yellow;
+  }
+}
+
+#tog span:after {
+  width: 45%;
+
+  &:hover {
+    width: 100%;
+  }
+}
+
+/* on activation */
+#tog.on span {
+  background-color: transparent;
+}
+
+#tog.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+  width: 100%;
+}
+#tog.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+  width: 100%;
+}
+#tog.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#overlayn {
+  z-index: 5000;
+  visibility: hidden;
+  left: 30vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+
+  padding: 33px 50px;
+  background: #ffffff;
+  transform: translateY(-101%);
+  will-change: transform;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 14px 0 rgba(196, 196, 196, 0.15);
+
+  &.active {
+    visibility: visible;
+  }
+
+  a {
+    color: #010f15;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+
+    font-size: 13px;
+    line-height: 1.25;
+    font-weight: bolder;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    word-break: break-all;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #dcc384;
+    }
+
+    &.active {
+      color: #dcc384;
+
+      &:hover {
+        color: #dcc384;
+      }
+    }
+  }
+}
+
+#overlayn.on {
+  visibility: visible;
+  top: 89px;
+}
+
+@media screen and (max-width: 1000px) {
+  #tog.on span:before,
+  #tog.on span:after {
+    background-color: #010f15;
+  }
+
+  #overlayn {
+    position: fixed;
+    left: 0px;
+    z-index: 1079;
+    height: 100vh;
+    width: 370px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    font-size: 15px;
+    padding-left: 7rem;
+    line-height: 24px;
+    transform: translateX(-110%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s all cubic-bezier(0.4, 0, 0.2, 1);
+    top: 0px;
+
+    &.active {
+      visibility: visible;
+    }
+
+    a {
+      color: #000000;
+      font-weight: 400;
+      text-transform: capitalize;
+      display: block;
+      padding: 12px 20px;
+      transition: all 0.3s;
+      // width: 70%;
+
+      color: #000;
+      margin-bottom: 0.3rem;
+      border: none;
+      font-size: 15px;
+      border-radius: 2px;
+      text-align: center;
+
+      &.active {
+        background: #dcc384;
+        color: #000;
+
+        &:hover {
+          color: #000;
+        }
+      }
+      &:hover {
+        color: #dcc384;
+      }
+    }
+  }
+
+  #overlayn.on {
+    visibility: visible;
+    top: 0px;
+    left: 307px;
+    z-index: 270;
+    // height: 100vh - 87px;
+  }
+}
+
+.togglerr {
+  background-color: #010f15 !important;
+
+  &:active {
+    background-color: #dcc384 !important;
+  }
+}

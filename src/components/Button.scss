@@ -1,0 +1,39 @@
+.butt {
+  background-color: #DCC384;
+  border: none;
+  color: #010f15;
+  outline: none;
+  padding: 15px 25px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 500;
+
+  &:before,
+  &:after {
+    border: 0 solid transparent;
+    transition: all 0.3s;
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 24px;
+    border-radius: 3px;
+  }
+
+  &:before {
+    border-top: 2px solid #dac89a;
+    right: 0;
+    top: -4px;
+  }
+
+  &:after {
+    border-bottom: 2px solid #dac89a;
+    bottom: -4px;
+    left: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+.but {
+  background-color: #010F15 !important;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 15px 25px ;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.but:before,
+.but:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 24px;
+  border-radius: 3px;
+}
+
+.but:before {
+  border-top: 2px solid #141414;
+  right: 0;
+  top: -4px;
+}
+
+.but:after {
+  border-bottom: 2px solid #141414;
+  bottom: -4px;
+  left: 0;
+}
+
+.but:hover:before,
+.but:hover:after {
+  width: 100%;
+}
