@@ -13,6 +13,11 @@ import Button from "../components/Button"
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import 'react-slideshow-image/dist/styles.css'
 import { Fade } from 'react-slideshow-image';
+import Zoom from 'react-reveal/Zoom';
+import Pulse from 'react-reveal/Pulse';
+import Slide from 'react-reveal/Slide';
+import Head from "../components/Head";
+
 
 
  
@@ -173,15 +178,16 @@ function renderRightQuality(onClick, disabled) {
 function Home() {
   return (
     <Layout>
+    <Head title="Aesthetics Marble World" />
       <div className={HomeStyles.home}>
         <div className={HomeStyles.main}>
           <div className={HomeStyles.mainLeft}>
            
             <div className={HomeStyles.mainLeftTop}>
               <div className={HomeStyles.tag}>
-                <p className={HomeStyles.aesthetics}>AESTHETICS</p>
-                <p className={HomeStyles.marble}>MARBLE</p>
-                <p className={HomeStyles.world}>WORLD</p>
+                <p className={HomeStyles.aesthetics}> <Zoom left big cascade>AESTHETICS </Zoom></p>
+                <p className={HomeStyles.marble}><Zoom right big cascade>MARBLE </Zoom></p>
+                <p className={HomeStyles.world}><Zoom left big cascade>WORLD</Zoom></p>
               </div>
               <p className={HomeStyles.slogan}>
                 No job too big. No job too small.
@@ -193,6 +199,7 @@ function Home() {
             </div>
           </div>
           <div className={HomeStyles.mainRight}>
+          <div  className={HomeStyles.overlay}></div>
           <div className="slide-container">
       <Fade duration= {3000}
       arrows={false}
@@ -222,32 +229,39 @@ function Home() {
           <div></div>
         </div>
         <div className={HomeStyles.about}>
-          <div className={HomeStyles.aboutLeft}>
-            <p className={HomeStyles.aboutHead}>WHO WE ARE</p>
-            <h2> No job too big. No job too small.</h2>
-            <div className={HomeStyles.aboutLine}></div>
-            <Link to="/about">
-              <Button1 text="LEARN MORE" />
-            </Link>
-          </div>
+        <Slide left big text cascade>
+          <div className={HomeStyles.aboutLeft}>       
+          <p className={HomeStyles.aboutHead}>WHO WE ARE</p>
+          <h2> No job too big. No job too small.</h2>
+          <div className={HomeStyles.aboutLine}></div>
+          <Link to="/about">
+            <Button1 text="LEARN MORE" />
+          </Link>
 
+          </div>
+          </Slide>
+
+          <Slide right big text cascade>
           <div className={HomeStyles.aboutRight}>
-            <p className={HomeStyles.aboutRightThick}>
-              We are a construction company specializing in Marble and other
-              Natural stones procured from all over the world.{" "}
-            </p>
+          <p className={HomeStyles.aboutRightThick}>
+            We are a construction company specializing in Marble and other
+            Natural stones procured from all over the world.{" "}
+          </p>
 
-            <p>
-              As a reputable company, we value & place much importance in the
-              quality of our products. With the use and implementation of modern
-              technologies & design, we adopt new production techniques. The
-              creativity & design ability of our team is outstanding.
-            </p>
-          </div>
+          <p>
+            As a reputable company, we value & place much importance in the
+            quality of our products. With the use and implementation of modern
+            technologies & design, we adopt new production techniques. The
+            creativity & design ability of our team is outstanding.
+          </p>
+        </div>
+          </Slide>
+        
         </div>
 
         <div className={HomeStyles.quality}>
-          <div className={HomeStyles.qualityLeft}>
+        <Slide left big text cascade>
+        <div className={HomeStyles.qualityLeft}>
             <p className={HomeStyles.qualityHead}>QUALITY & PRECISION</p>
             <h2> WE WILL TURN YOUR DREAM TO REALITY</h2>
             <div className={HomeStyles.qualityLine}></div>
@@ -257,8 +271,10 @@ function Home() {
               quartz, granites, onyx and others.
             </p>
           </div>
+        </Slide>
 
-          <div className={HomeStyles.qualityGallery}>
+        <Pulse>
+        <div className={HomeStyles.qualityGallery}>
             {" "}
             <ImageGallery
               items={images}
@@ -267,11 +283,12 @@ function Home() {
               showNav={true}
               showFullscreenButton={false}
               showIndex={false}
-              // renderRightNav={renderRightQuality}
-              // renderLeftNav={renderLeftQuality}
               additionalClass="qualityadditional"
             />{" "}
           </div>
+        </Pulse>
+
+          
         </div>
 
         <div className={HomeStyles.project}>
@@ -280,15 +297,18 @@ function Home() {
             <div className={HomeStyles.projectHeading}>
               {" "}
               <h2>
-                PRO<span>JECTS</span>
+              <Zoom left big cascade>
+              PROJECTS
+              </Zoom>
               </h2>
-              <p>Below, we have featured some of our recent works</p>
+            <p><Zoom left big cascade> Here are our most recent works</Zoom></p>
+              
             </div>
             <div className={HomeStyles.lineCover}>
               {" "}
               <div className={HomeStyles.line}></div>
             </div>
-            <div id="contactform" className={HomeStyles.slides}>
+            <div  className={HomeStyles.slides}>
               <ImageGallery
                 items={images}
                 showPlayButton={false}

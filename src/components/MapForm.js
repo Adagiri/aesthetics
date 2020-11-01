@@ -14,7 +14,7 @@ function MapForm() {
         <div className={MapFormStyles.form}>
 
         {
-            formToggle && <Form setFormToggle={setFormToggle}  />
+            formToggle && <Form formToggle={formToggle} setFormToggle={setFormToggle}  />
         }
         {
             !formToggle && <div className={MapFormStyles.message} onClick={() => setFormToggle(true)} >

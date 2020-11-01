@@ -7,6 +7,7 @@ import {  IconButton }from '@material-ui/core';
 import axios from 'axios';
 import Button from "./Button";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import Flash from 'react-reveal/Flash';
 
 function Form(props) {
 
@@ -50,50 +51,53 @@ function Form(props) {
     };
     
     return (
-        <div className={FormStyles.form} id="contactform">
-        {
-          loading && <div className={FormStyles.overlay}>
-          <div className={FormStyles.loader}><p>Sending...</p><span></span> <span></span> <span></span> <span></span></div>
-          </div>
-        }
-        <IconButton  className={FormStyles.toggle} onClick={() => setTimeout(() => setFormToggle(false), 300 ) }>
-        <CancelIcon style={{fontSize: "30px"}} />
-        </IconButton>
+      <Flash >
+      <div className={FormStyles.form} id="contactform">
+      {
+        loading && <div className={FormStyles.overlay}>
+        <div className={FormStyles.loader}><p>Sending...</p><span></span> <span></span> <span></span> <span></span></div>
+        </div>
+      }
+      <IconButton  className={FormStyles.toggle} onClick={() => setTimeout(() => setFormToggle(false), 300 ) }>
+      <CancelIcon style={{fontSize: "30px"}} />
+      </IconButton>
 
-            <p className={FormStyles.heading}>GET IN TOUCH WITH
-            US</p>
-            <p className={FormStyles.subHeading}>LET’S WORK TOGETHER! </p>
+          <p className={FormStyles.heading}>GET IN TOUCH WITH
+          US</p>
+          <p className={FormStyles.subHeading}>LET’S WORK TOGETHER! </p>
 
-            <form  onSubmit={handleOnSubmit} className={FormStyles.formData}>
-            <div className={FormStyles.userBox}>
-            <input required  className={FormStyles.input} type="text" name="name"  />
-            <label className={FormStyles.label}>Name</label>
-          </div>
+          <form  onSubmit={handleOnSubmit} className={FormStyles.formData}>
           <div className={FormStyles.userBox}>
-            <input required className={FormStyles.input} type="email" name="email"  />
-            <label className={FormStyles.label} >Email</label>
-          </div>
+          <input required  className={FormStyles.input} type="text" name="name"  />
+          <label className={FormStyles.label}>Name</label>
+        </div>
+        <div className={FormStyles.userBox}>
+          <input required className={FormStyles.input} type="email" name="email"  />
+          <label className={FormStyles.label} >Email</label>
+        </div>
 
-          <div className={FormStyles.userBox}>
-          <input required type="text"  name="message" className={FormStyles.input}  />
-            <label className={FormStyles.label} >Message</label>
-          </div>
-            
+        <div className={FormStyles.userBox}>
+        <input required type="text"  name="message" className={FormStyles.input}  />
+          <label className={FormStyles.label} >Message</label>
+        </div>
+          
 
 <div className={FormStyles.buttonCover}><Button type="submit" text="SUBMIT" />
 <a href="https://wa.me/+2348037296906?text=Hello,  %20Hello%20Aesthetics!" target="_blank">
 <IconButton style={{height: "200px !important"}} ><WhatsAppIcon style={{color: "52CD60", fontSize: "40px"}} /></IconButton>
 </a>
 </div>
-        
+      
 
-         {serverState.status && (
-          <p className={!serverState.status.ok ? "errorMsg" : ""} style={{color: !serverState.status.ok ? "red" : "green"}}>
-          {serverState.status.msg}
-          </p>
-      )}
-            </form>
-        </div>
+       {serverState.status && (
+        <p className={!serverState.status.ok ? "errorMsg" : ""} style={{color: !serverState.status.ok ? "red" : "green"}}>
+        {serverState.status.msg}
+        </p>
+    )}
+          </form>
+      </div>
+      </Flash>
+ 
     )
 }
 
