@@ -7,15 +7,7 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: [
-          'material icons',
-          'roboto:300,400,500,700',
-        ],
-      },
-    },
+   
     {
       resolve: "gatsby-plugin-sentry",
       options: {
@@ -33,6 +25,27 @@ module.exports = {
         // Disable the loading spinner.
         showSpinner: false,
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyDA1ppo_QufoGXXA9uUWxp2CFb26nfe1aU",
+          authDomain: "aestheticsmarbleworld.firebaseapp.com",
+          databaseURL: "https://aestheticsmarbleworld.firebaseio.com",
+          projectId: "aestheticsmarbleworld",
+          storageBucket: "aestheticsmarbleworld.appspot.com",
+          messagingSenderId: "172607549674",
+          appId: "1:172607549674:web:1c54a3ba183934155b2793",
+          measurementId: "G-HB8JE2631T"
+        }
+      }
+    },
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: require.resolve(`./src/components/Layout.js`),
+    //   },
+    // },
   ],
 }

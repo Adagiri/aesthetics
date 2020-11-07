@@ -7,7 +7,7 @@ import {  IconButton }from '@material-ui/core';
 import axios from 'axios';
 import Button from "./Button";
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import Flash from 'react-reveal/Flash';
+import Pulse from 'react-reveal/Pulse';
 
 function Form(props) {
 
@@ -51,7 +51,7 @@ function Form(props) {
     };
     
     return (
-      <Flash >
+      <Pulse >
       <div className={FormStyles.form} id="contactform">
       {
         loading && <div className={FormStyles.overlay}>
@@ -96,7 +96,7 @@ function Form(props) {
     )}
           </form>
       </div>
-      </Flash>
+      </Pulse>
  
     )
 }

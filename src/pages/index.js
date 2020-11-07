@@ -1,12 +1,8 @@
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import React from "react"
-import Layout from "../components/Layout"
 import HomeStyles from "../styles/index.module.scss"
 import "../styles/index.css"
 import ImageGallery from "react-image-gallery"
-import ArrowBackIcon from "@material-ui/icons/ArrowBack"
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
-import { IconButton } from "@material-ui/core"
 import "../styles/samples.scss"
 import Button1 from "../components/Button1"
 import Button from "../components/Button"
@@ -14,170 +10,58 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import 'react-slideshow-image/dist/styles.css'
 import { Fade } from 'react-slideshow-image';
 import Zoom from 'react-reveal/Zoom';
-import Pulse from 'react-reveal/Pulse';
 import Slide from 'react-reveal/Slide';
 import Head from "../components/Head";
+import { useStateValue } from '../components/StateProvider';
+import Layout from "../components/Layout"
 
 
-
- 
-const fadeImages = [
-  'https://picsum.photos/id/1018/1000/600/',
-  'https://picsum.photos/id/1015/1000/600/',
-  'https://picsum.photos/id/1018/1000/600/'
-];
- 
-
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-    description: "First Image",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-    description: "Second Test Image",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-    description: "Third test graphic",
-  },
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-    description: "First Image",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-    description: "Second Test Image",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-    description: "Third test graphic",
-  },
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-    description: "First Image",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-    description: "Second Test Image",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-    description: "Third test graphic",
-  },
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-    description: "First Image",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-    description: "Second Test Image",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-    description: "Third test graphic",
-  },
-]
-
-function renderLeft(onClick, disabled) {
-  return (
-    <div className="arr-cover">
-      <IconButton
-        className="image-gallery-custom-left-nav arr-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowBackIcon className="icon-material" />
-      </IconButton>
-    </div>
-  )
-}
-
-function renderRight(onClick, disabled) {
-  return (
-    <div className="arr-cover1">
-      <IconButton
-        className="image-gallery-custom-right-nav arr-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowForwardIcon className="icon-material" />
-      </IconButton>
-    </div>
-  )
-}
-
-function renderLeftNav(onClick, disabled) {
-  return (
-    <div className="arrow-cover">
-      <IconButton
-        className="image-gallery-custom-left-nav arrow-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowBackIcon className="icon-material" />
-      </IconButton>
-    </div>
-  )
-}
-
-function renderRightNav(onClick, disabled) {
-  return (
-    <div className="arrow-cover1">
-      <IconButton
-        className="image-gallery-custom-right-nav arrow-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowForwardIcon className="icon-material" />
-      </IconButton>
-    </div>
-  )
-}
-
-function renderLeftQuality(onClick, disabled) {
-  return (
-    <div className="arow-cover">
-      <IconButton
-        className="image-gallery-custom-left-nav arow-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowBackIcon className="icon-material1" />
-      </IconButton>
-    </div>
-  )
-}
-
-function renderRightQuality(onClick, disabled) {
-  return (
-    <div className="arow-cover1">
-      <IconButton
-        className="image-gallery-custom-right-nav arow-border"
-        disabled={disabled}
-        onClick={onClick}
-      >
-        <ArrowForwardIcon className="icon-material1" />
-      </IconButton>
-    </div>
-  )
-}
 
 function Home() {
+
+  const [service, setServices] = useState([
+    {
+src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2Fjeg2LXIfiIzxcdG8r4xq%2Ffiles?alt=media&token=fca55ec4-0b0d-4ef3-8fe7-f61b129e7a11",
+
+title: "Supply and Installation of marble"
+    },
+    {
+      src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2FpFbWTnCrAmLCZ9rkdQ6q%2Ffiles?alt=media&token=ed6f0af8-d7b6-4a8c-8bfe-8f5e82f9e0f1",
+
+      title: "Building and Renovation"
+    }
+  ])
+
+
+  const [marble, setMarbles] = useState([
+    {
+      original: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/marbles%2F5zP3OEOrWdw3qbGiddJx%2Ffiles?alt=media&token=4543145d-8be1-4c65-b692-c316db48938d",
+      thumbnail: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/marbles%2F5zP3OEOrWdw3qbGiddJx%2Ffiles?alt=media&token=4543145d-8be1-4c65-b692-c316db48938d",
+      description: "marble",
+    },
+    {
+      original: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/marbles%2FM9iBUsxMNbbVNdyUqjyE%2Ffiles?alt=media&token=f1fafd22-086b-4561-954a-c06007dff871",
+      thumbnail: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/marbles%2FM9iBUsxMNbbVNdyUqjyE%2Ffiles?alt=media&token=f1fafd22-086b-4561-954a-c06007dff871",
+      description: "marble",
+    }
+  ]);
+
+  const [{marbles, services}, dispatch] = useStateValue();
+
+
+  useEffect(() => {
+
+   marbles.length > 0 && setMarbles(marbles)
+
+    services.length > 0 && setServices(services)
+    return () => {
+      
+    };
+  }, [services, marbles])
+
+
   return (
-    <Layout>
+    <React.Fragment>
     <Head title="Aesthetics Marble World" />
       <div className={HomeStyles.home}>
         <div className={HomeStyles.main}>
@@ -204,24 +88,19 @@ function Home() {
       <Fade duration= {3000}
       arrows={false}
       >
-        <div style={{position: "relative"}} className="each-fade">
+
+      {
+        service.map((service) => (
+          <div style={{position: "relative"}} className="each-fade">
           <div className="image-container">
-            <img className="slide-main-img"  src={fadeImages[0]} />
+            <img className="slide-main-img"  src={service.src} />
           </div>
-          <h2 className="slide-main-text" >First Slide</h2>
+          <h2 className="slide-main-text" >{service.title}</h2>
         </div>
-        <div  style={{position: "relative"}} className="each-fade">
-          <div className="image-container">
-            <img className="slide-main-img" src={fadeImages[1]} />
-          </div>
-          <h2 className="slide-main-text">Second Slide</h2>
-        </div>
-        <div  style={{position: "relative"}} className="each-fade">
-          <div className="image-container">
-            <img className="slide-main-img" src={fadeImages[2]} />
-          </div>
-          <h2 className="slide-main-text">Third Slide</h2>
-        </div>
+        ))
+      }
+        
+       
       </Fade>
     </div>
           </div>
@@ -273,58 +152,28 @@ function Home() {
           </div>
         </Slide>
 
-        <Pulse>
+      
         <div className={HomeStyles.qualityGallery}>
             {" "}
             <ImageGallery
-              items={images}
+              items={marble}
               showPlayButton={false}
               showThumbnails={false}
               showNav={true}
               showFullscreenButton={false}
               showIndex={false}
               additionalClass="qualityadditional"
+              autoPlay={true}
             />{" "}
           </div>
-        </Pulse>
+       
 
           
         </div>
 
-        <div className={HomeStyles.project}>
-          <div className={HomeStyles.projectCover}>
-            {" "}
-            <div className={HomeStyles.projectHeading}>
-              {" "}
-              <h2>
-              <Zoom left big cascade>
-              PROJECTS
-              </Zoom>
-              </h2>
-            <p><Zoom left big cascade> Here are our most recent works</Zoom></p>
-              
-            </div>
-            <div className={HomeStyles.lineCover}>
-              {" "}
-              <div className={HomeStyles.line}></div>
-            </div>
-            <div  className={HomeStyles.slides}>
-              <ImageGallery
-                items={images}
-                showPlayButton={false}
-                thumbnailPosition="bottom"
-                showNav={true}
-                showThumbnails={false}
-                showFullscreenButton={false}
-                //      renderRightNav={renderRightNav}
-                // renderLeftNav={renderLeftNav}
-                additionalClass="additional"
-              />
-            </div>
-          </div>
-        </div>
       </div>
-    </Layout>
+       </React.Fragment>
+
   )
 }
 

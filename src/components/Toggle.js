@@ -2,8 +2,6 @@ import React from 'react';
 import "./Toggle.scss";
 import {useState, useEffect, useRef} from 'react';
 import { Link } from 'gatsby';
-import CloseIcon from '@material-ui/icons/Close';
-import { IconButton } from '@material-ui/core';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 
 function Toggle() {
@@ -28,26 +26,24 @@ function Toggle() {
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
     setTimeout(() => setActiveClass(document.title), 300)
-    console.log(document.title)
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
+  }, [document.title]);
 
-     
 
     return (
 <div ref={node}>
  <a href="#menu" onClick={() => setToggle(!toggle)} className={ toggle && "on"} id="tog"><span ></span></a>
 
-<div id="overlayn" className={ toggle && "on"} >
-<Link className={active === "Aesthetics Marble World" && "active"} to="/" >Home</Link>
-<Link className={active === "About - Aesthetics Marble World" && "active"} to="/about" >About</Link>
-<Link className={active === "Projects - Aesthetics Marble World" && "active"} to="/projects"  >Projects</Link>
-<Link  className={active === "Services - Aesthetics Marble World" && "active"} to="/services" >Services</Link>
+<div id="overlayn"  className={ toggle && "on"} >
+<Link onClick={() => setToggle(false)} className={active === "Aesthetics Marble World" && "active"} to="/" >Home</Link>
+<Link onClick={() => setToggle(false)} className={active === "About - Aesthetics Marble World" && "active"} to="/about" >About</Link>
+<Link onClick={() => setToggle(false)} className={active === "Projects - Aesthetics Marble World" && "active"} to="/projects"  >Projects</Link>
+<Link onClick={() => setToggle(false)} className={active === "Services - Aesthetics Marble World" && "active"} to="/services" >Services</Link>
 
 <a style={{background: "none", color: "black"}}><div style={{display: 'flex', justifyContent: "center", alignItems: "center"}}><PhoneAndroidIcon  /> <p >
-0803 729 6906</p></div></a>
+0802 067 7749</p></div></a>
     
 </div>
 

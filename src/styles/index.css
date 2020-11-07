@@ -76,7 +76,7 @@
 
 .qualityadditional {
   max-width: 400px;
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
   border-radius: 5px;
   margin-left: 3rem;
 }
@@ -109,6 +109,7 @@
   color: #ffffff;
   background: #010f15e8;
   border-radius: 3px;
+  display: none;
 }
 
 .additional .image-gallery-slide .image-gallery-description {
@@ -130,9 +131,9 @@
 
 @media screen and (max-width: 900px) {
   .qualityadditional {
-    margin-top: 6rem;
+    margin-top: 2rem;
     left: 0;
-    max-width: 400px;
+    width: 400px;
   }
 
   .arrow-cover {
@@ -148,8 +149,8 @@
   .slide-main-text {
     text-align: center;
     position: absolute;
-    top: 45%;
-    font-size: 30px;
+    bottom: 0px;
+    font-size: 15px;
     left: 0px;
     width: 100%;
     color: #ffffff;
@@ -160,9 +161,9 @@
   }
 
   .qualityadditional {
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     left: 0;
-    max-width: 400px;
+    width: 400px;
     padding: 0 1rem;
   }
 
@@ -192,7 +193,7 @@
 
 .additionality .image-gallery-slide .image-gallery-description {
   position: absolute;
-  bottom: 20px;
+  bottom: 3px;
   left: 20px;
   height: 60px;
   color: #ffffff;
@@ -220,8 +221,8 @@
 }
 
 .qualityadditional {
-  max-width: 400px;
-  margin-top: 3rem;
+  width: 400px;
+  /* margin-top: 3rem; */
   border-radius: 5px;
   margin-left: 0;
 }
@@ -253,6 +254,8 @@
 @media screen and (max-width: 1000px) {
   .slide-main-img {
     height: 60vh;
+    width: 100%;
+    object-fit: cover;
   }
 
   .additionality {
@@ -273,10 +276,10 @@
     top: 100px;
   }
 
-  .additionality .image-gallery-image {
+  /* .additionality .image-gallery-image {
     min-height: 0;
     object-fit: contain;
-  }
+  } */
 
   .additionality .image-gallery-slide .image-gallery-description {
     position: absolute;
@@ -288,8 +291,8 @@
 }
 
 .qualityadditional .image-gallery-svg {
-  height: 80px;
-  width: 40px;
+  height: 60px;
+  width: 30px;
   color: #ffffffde;
 }
 
@@ -302,10 +305,19 @@
 .slide-main-text {
   text-align: center;
   position: absolute;
-  top: 45%;
-  font-size: 40px;
+  bottom: 0px;
+  font-size: 22px;
   left: 0px;
   width: 100%;
-  color: #ffffff;
+  background-color: #ffffffbb;
+  padding: 1rem;
+  color: #010f15;
+  height: fit-content;
   /* letter-spacing: 1px; */
+}
+
+.qualityadditional .image-gallery-image {
+  height: 200px;
+  object-fit: cover;
+  width: 250px;
 }

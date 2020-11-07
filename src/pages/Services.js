@@ -1,16 +1,16 @@
 import React from 'react';
 import ServicesStyles from "../styles/services.module.scss";
 import Button from '../components/Button';
-import Layout from "../components/Layout";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Blob from "../images/blob.svg";
 import Zoom from 'react-reveal/Zoom';
 import Head from "../components/Head";
 
 
+
 function Services() {
     return (
-        <Layout>
+
+          <React.Fragment>
         <Head title='Services - Aesthetics Marble World' />
         <div className={ServicesStyles.services}>
         <div className={ServicesStyles.header}>
@@ -49,7 +49,7 @@ function Services() {
         </ul>
         </div>
         </div>
-        </Layout>
+          </React.Fragment>
     )
 }
 
