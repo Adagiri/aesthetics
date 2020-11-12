@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.layout {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  .logoToggleBar {
+    background-color:#010c11;
+    z-index: 200000;
+    top: 20px;
+    left: 2rem;
+    padding: .2rem .7rem;
+    border-radius: 10px;
+    position: fixed;
+  }
+
+
+
+  .logoToggle {
+    display: flex;
+    position: absolute;
+    background-color: #010f15;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 4rem;
+    left: 0;
+    top: .5rem;
+height: 80px;
+width: 30vw;
+    img {
+      width: 55px;
+      z-index: 20000;
+      margin-left: 6rem;
+    }
+  }
+}
+
+.scrolltotop {
+  width: 20px;
+  height: 30px;
+  z-index: 100000;
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .layout {
+    .logoToggle {
+      width: 100%;
+    }
+  }
+}

@@ -39,8 +39,8 @@
 
         .slogan {
           font-style: normal;
-          font-weight: bolder;
-          font-size: 20px;
+          font-weight: bold;
+          font-size: 18px;
           line-height: 120.9%;
           /* or 40px */
           width: 165px;
@@ -66,10 +66,11 @@
         .tag {
           margin-right: 6rem;
           text-align: center;
+          background-color: #010f15;
           .aesthetics {
             font-style: normal;
             font-weight: bold;
-            font-size: 23px;
+            font-size: 21px;
             line-height: 131.4%;
             letter-spacing: -0.1em;
             color: #ffffff;
@@ -79,7 +80,7 @@
           .marble {
             font-style: normal;
             font-weight: bold;
-            font-size: 23px;
+            font-size: 21px;
             line-height: 131.4%;
             /* or 53px */
             margin-left: 4rem;
@@ -91,7 +92,7 @@
           .world {
             font-style: normal;
             font-weight: bold;
-            font-size: 23px;
+            font-size: 21px;
             line-height: 131.4%;
             /* or 53px */
             letter-spacing: -0.05em;
@@ -143,7 +144,7 @@
       p {
         font-style: normal;
         font-weight: 500;
-        font-size: 16px;
+    font-size: 15px;
         line-height: 170.9%;
         /* or 52px */
 
@@ -155,8 +156,8 @@
       .aboutRightThick {
         margin-bottom: 1rem;
         font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 600;
+        font-size: 15px;
         // line-height: 189.9%;
         /* or 51px */
         letter-spacing: 0.01rem;
@@ -177,8 +178,8 @@
 
       h2 {
         font-style: normal;
-        font-weight: 800;
-        font-size: 25px;
+        font-weight: bold;
+        font-size: 23px;
         line-height: 36px;
         letter-spacing: -0.01em;
         color: #010f15;
@@ -270,11 +271,11 @@
       .qualityContent {
         font-style: normal;
         font-weight: 500;
-        font-size: 17px;
+        font-size: 15px;
         line-height: 179.9%;
         /* or 54px */
 
-        letter-spacing: 0.002rem;
+        letter-spacing: 0.009rem;
         font-feature-settings: "tnum" on, "lnum" on;
 
         color: #ffffff;
@@ -375,7 +376,7 @@
   }
   .home {
     .about {
-      padding: 3rem ;
+      padding: 3rem;
 
       .aboutLeft {
         align-items: center;
@@ -497,7 +498,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem ;
+      padding: 3rem;
       flex-wrap: nowrap;
 
       .aboutLeft {

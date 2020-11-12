@@ -18,7 +18,7 @@
       position: relative;
 
       h1 {
-        font-size: 27px;
+        font-size: 22px;
         font-style: normal;
         font-weight: 700;
         line-height: 78px;
@@ -43,7 +43,7 @@
       align-items: center;
 
       h1 {
-        font-size: 27px;
+        font-size: 23px;
         font-style: normal;
         font-weight: 700;
         line-height: 78px;
@@ -83,6 +83,7 @@
         margin-bottom: 1rem;
         line-height: 1.8;
         font-weight: 500;
+        font-size: 15px;
         width: 90%;
         color: #3f3e3e;
       }
@@ -116,6 +117,12 @@
   }
 
   .body {
-    padding: 2rem 1rem;
+    padding: 2rem .1rem;
+
+    ul {
+      li {
+        width: 100%;
+      }
+    }
   }
 }

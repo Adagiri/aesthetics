@@ -14,6 +14,10 @@ import Slide from 'react-reveal/Slide';
 import Head from "../components/Head";
 import { useStateValue } from '../components/StateProvider';
 import Layout from "../components/Layout"
+import config from 'react-reveal/globals';
+import { Helmet } from "react-helmet";
+
+config({ ssrFadeout: true });
 
 
 
@@ -21,14 +25,14 @@ function Home() {
 
   const [service, setServices] = useState([
     {
-src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2Fjeg2LXIfiIzxcdG8r4xq%2Ffiles?alt=media&token=fca55ec4-0b0d-4ef3-8fe7-f61b129e7a11",
+src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2FhX2glvbgFidz4nyh4yRA%2Ffiles?alt=media&token=4d9f26d3-e2b0-406e-bac0-190c289d67e4",
 
-title: "Supply and Installation of marble"
+title: "All building works from scratch"
     },
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2FpFbWTnCrAmLCZ9rkdQ6q%2Ffiles?alt=media&token=ed6f0af8-d7b6-4a8c-8bfe-8f5e82f9e0f1",
+      src: "https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/services%2Fjeg2LXIfiIzxcdG8r4xq%2Ffiles?alt=media&token=c0bcfd17-dc40-4100-96f6-f5565dc1220c",
 
-      title: "Building and Renovation"
+      title: "Supply and Installation of all natural stones"
     }
   ])
 
@@ -61,8 +65,25 @@ title: "Supply and Installation of marble"
 
 
   return (
-    <React.Fragment>
-    <Head title="Aesthetics Marble World" />
+    <div>
+    <Helmet>
+    <title>Aesthetics Marble World Ltd.</title>
+    <meta
+          name="description"
+          content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+        />
+
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop="name" content="Aesthetics Marble World Ltd." />
+        <meta
+          itemprop="description"
+          content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+        />
+        <meta
+          itemprop="image"
+          content="https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/a.png?alt=media&token=44bb08e8-1b05-4ecb-adc5-b1f56d9ef744"
+        />
+    </Helmet>
       <div className={HomeStyles.home}>
         <div className={HomeStyles.main}>
           <div className={HomeStyles.mainLeft}>
@@ -70,7 +91,7 @@ title: "Supply and Installation of marble"
             <div className={HomeStyles.mainLeftTop}>
               <div className={HomeStyles.tag}>
                 <p className={HomeStyles.aesthetics}> <Zoom left big cascade>AESTHETICS </Zoom></p>
-                <p className={HomeStyles.marble}><Zoom right big cascade>MARBLE </Zoom></p>
+                <p className={HomeStyles.marble}><Zoom ssrFadeout  right big cascade>MARBLE </Zoom></p>
                 <p className={HomeStyles.world}><Zoom left big cascade>WORLD</Zoom></p>
               </div>
               <p className={HomeStyles.slogan}>
@@ -172,7 +193,8 @@ title: "Supply and Installation of marble"
         </div>
 
       </div>
-       </React.Fragment>
+      <a id="contactform" ></a>
+       </div>
 
   )
 }

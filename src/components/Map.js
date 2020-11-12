@@ -86,7 +86,7 @@ export default class App extends Component {
           onClose={() => this.setState({popupInfo: null})}
         >
       
-        <p style={{background: "#010f15", color: "#dcc384",  padding: "12px"}}>
+        <p style={{background: "#010f15", color: "#dcc384",  padding: "12px", fontSize: "13px"}}>
         Aesthetics Marble World
         </p>
         

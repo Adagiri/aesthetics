@@ -45,7 +45,7 @@ function Footer() {
       </div>
 
       <div className={FooterStyles.developed}>
-        powered by <a href="https://adagiri.web.app">adagiri</a>
+        powered by <a href="https://raiteck.com">Rai Tech</a>
       </div>
     </div>
   )

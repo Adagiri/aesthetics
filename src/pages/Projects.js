@@ -7,6 +7,10 @@ import Zoom from 'react-reveal/Zoom';
 import Head from "../components/Head";
 import { useStateValue } from '../components/StateProvider';
 import Layout from '../components/Layout';
+import config from 'react-reveal/globals';
+import { Helmet } from "react-helmet";
+
+config({ ssrFadeout: true });
 
 
 function Projects() {
@@ -25,8 +29,25 @@ function Projects() {
     }, [gallery])
     return (
 
-        <React.Fragment>
-      <Head title="Projects - Aesthetics Marble World" />
+        <div>
+       <Helmet>
+    <title>Projects - Aesthetics Marble World</title>
+    <meta
+          name="description"
+          content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+        />
+
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop="name" content="Aesthetics Marble World Ltd." />
+        <meta
+          itemprop="description"
+          content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+        />
+        <meta
+          itemprop="image"
+          content="https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/a.png?alt=media&token=44bb08e8-1b05-4ecb-adc5-b1f56d9ef744"
+        />
+    </Helmet>
       <div className={ProjectsStyles.project}>
       {galleri && (
        <Lightbox
@@ -101,7 +122,7 @@ function Projects() {
      </ul>
       </div>
       </div>
-        </React.Fragment>
+        </div>
 
     )
 }

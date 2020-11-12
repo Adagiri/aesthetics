@@ -305,14 +305,15 @@
 .slide-main-text {
   text-align: center;
   position: absolute;
-  bottom: 0px;
-  font-size: 22px;
+  bottom: 2px;
+  font-size: 20px;
   left: 0px;
   width: 100%;
   background-color: #ffffffbb;
   padding: 1rem;
   color: #010f15;
-  height: fit-content;
+  font-weight: 500;
+
   /* letter-spacing: 1px; */
 }
 
@@ -320,4 +321,9 @@
   height: 200px;
   object-fit: cover;
   width: 250px;
+}
+
+.slide-main-img {
+  min-width: 70vw;
+  object-fit: cover;
 }

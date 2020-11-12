@@ -5,20 +5,42 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Zoom from 'react-reveal/Zoom';
 import Head from "../components/Head";
 import Layout from '../components/Layout';
+import Loadable from "@loadable/component"
+import config from 'react-reveal/globals';
+import { Helmet } from "react-helmet";
 
+config({ ssrFadeout: true });
 
 function About() {
     return (
      
-         <React.Fragment>
-         <Head title="About - Aesthetics Marble World" />
+         <div>
+         <Helmet>
+    <title>About - Aesthetics Marble World</title>
+    <meta
+          name="description"
+          content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+        />
+
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop="name" content="Aesthetics Marble World Ltd." />
+        <meta
+          itemprop="description"
+          content="Aesthetics Marble World Limited | We specialize in Marble and other Natural stones procured from all over the world."
+        />
+        <meta
+          itemprop="image"
+          content="https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/a.png?alt=media&token=44bb08e8-1b05-4ecb-adc5-b1f56d9ef744"
+        />
+    </Helmet>
+        
          <div className={AboutStyles.about}>
          <div className={AboutStyles.header}>
          <div className={AboutStyles.headerLeft}>
-         <h1> <Zoom left cascade>COMPANY</Zoom> </h1> <AnchorLink href='#contactform' offset='-550px'> <Button text="CONTACT US" /></AnchorLink></div>
+         <h1> <Zoom ssrFadeout left cascade>COMPANY</Zoom> </h1> <AnchorLink href='#contactform' offset='-550px'> <Button text="CONTACT US" /></AnchorLink></div>
          <div className={AboutStyles.headerRight}>
          <div> 
-         <h1> <Zoom left cascade>COMPANY</Zoom> </h1>
+         <h1> <Zoom ssrFadeout left cascade>COMPANY</Zoom> </h1>
       <p>OUR MISSION <span>WHO WE ARE</span></p></div>
        
          </div>
@@ -27,12 +49,12 @@ function About() {
          <div className={AboutStyles.body}>
         
  
-         <h2> <Zoom right cascade>Mission Statement </Zoom></h2>
+         <h2> <Zoom ssrFadeout right cascade>Mission Statement </Zoom></h2>
         
  
          <p>Whether you are an Architect, Builder, Contractor or residential home owner, our expert craftsmanship and attention to detail will bring your project to life.</p>
  
-         <h2> <Zoom right cascade>About Us </Zoom></h2>
+         <h2> <Zoom ssrFadeout right cascade>About Us </Zoom></h2>
  
         
          <p>Aesthetics Marble world Ltd. is one of the top companies in Nigeria, specializing in Marble and other Natural stones procured from all over the world. It has been in existence for more than 15 years, registered and incorporated under the Nigeria Corporate Affairs Commision.
@@ -52,10 +74,12 @@ function About() {
         
          </div>
          </div>
-     
-         </React.Fragment>
+         <a id="contactform" ></a>
+         </div>
        
     )
 }
 
-export default About
+
+
+export default About;

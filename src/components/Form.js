@@ -83,8 +83,8 @@ function Form(props) {
           
 
 <div className={FormStyles.buttonCover}><Button type="submit" text="SUBMIT" />
-<a href="https://wa.me/+2348037296906?text=Hello,  %20Hello%20Aesthetics!" target="_blank">
-<IconButton style={{height: "200px !important"}} ><WhatsAppIcon style={{color: "52CD60", fontSize: "40px"}} /></IconButton>
+<a href="https://wa.me/+2348033769004?text=Hello,  %20Hello%20Aesthetics!" target="_blank">
+<IconButton  ><WhatsAppIcon style={{color: "52CD60", fontSize: "40px"}} /></IconButton>
 </a>
 </div>
       

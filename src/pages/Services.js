@@ -4,14 +4,36 @@ import Button from '../components/Button';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Zoom from 'react-reveal/Zoom';
 import Head from "../components/Head";
+import Layout from "../components/Layout"
+import config from 'react-reveal/globals';
+import { Helmet } from 'react-helmet';
+
+config({ ssrFadeout: true });
 
 
 
 function Services() {
     return (
 
-          <React.Fragment>
-        <Head title='Services - Aesthetics Marble World' />
+          <div>
+          <Helmet>
+          <title>Services - Aesthetics Marble World</title>
+          <meta
+                name="description"
+                content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+              />
+      
+              {/* <!-- Google / Search Engine Tags --> */}
+              <meta itemprop="name" content="Aesthetics Marble World Ltd." />
+              <meta
+                itemprop="description"
+                content="Aesthetics Marble World Limited | Supply and Installation of Marble and other Natural Stones."
+              />
+              <meta
+                itemprop="image"
+                content="https://firebasestorage.googleapis.com/v0/b/aestheticsmarbleworld.appspot.com/o/a.png?alt=media&token=44bb08e8-1b05-4ecb-adc5-b1f56d9ef744"
+              />
+          </Helmet>
         <div className={ServicesStyles.services}>
         <div className={ServicesStyles.header}>
         <div className={ServicesStyles.headerLeft}> <h1> <Zoom left cascade>SERVICES</Zoom> </h1><AnchorLink href='#contactform' offset='-550px'> <Button text="CONTACT US" /></AnchorLink></div>
@@ -49,7 +71,8 @@ function Services() {
         </ul>
         </div>
         </div>
-          </React.Fragment>
+        <a id="contactform" ></a>
+          </div>
     )
 }
 

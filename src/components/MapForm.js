@@ -10,7 +10,10 @@ function MapForm() {
     const [formToggle, setFormToggle] = useState(true)
     return (
         <div className={MapFormStyles.mapForm}>
-        <div className={MapFormStyles.overlay}></div>
+        {
+            formToggle  &&   <div className={MapFormStyles.overlay} ></div>
+        }
+      
         <div className={MapFormStyles.form}>
 
         {
@@ -27,5 +30,3 @@ function MapForm() {
 }
 
 export default MapForm;
-
-// <button className={MapFormStyles.message} onClick={() => setFormToggle(false)}>MESSAGE US</button> 
